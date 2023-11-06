@@ -3,5 +3,11 @@
 
 ## To try it out 
 1. Get hugging face token from (https://huggingface.co)
-2. Install dependencies
-3. In project folder '''streamlit run main.py'''
+2. To install all dependencies:
+```
+pip install -r requirements.txt
+```
+3. To run the program:
+```
+streamlit run main.py
+```
