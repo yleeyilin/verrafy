@@ -21,6 +21,7 @@ def normal_chat(llm, documents):
         chunk_size = 1000,
         chunk_overlap  = 0,
     )
+
     splitDocs = text_splitter.split_documents(documents)
     db = FAISS.from_documents(splitDocs, embeddings)
     st.divider()
@@ -44,7 +45,7 @@ def normal_chat(llm, documents):
             with st.chat_message("assistant"):
                 message_placeholder = st.empty()
                 full_response = ""
-                docs = db.similarity_search(prompt)
+                docs = db.similarity_search(prompt, 1)
                 fileCheck = chain.run(input_documents=docs, question=prompt)
                 assistant_response = fileCheck
                 for chunk in assistant_response.split():
