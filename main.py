@@ -7,6 +7,7 @@ from reader import pdf_to_txt
 
 # ENV and LLM SETUP
 os.environ['HUGGINGFACEHUB_API_TOKEN'] = HUGGINGFACEHUB_API_TOKEN
+
 repo_id = "google/flan-t5-xxl"
 llm = HuggingFaceHub(
     repo_id=repo_id, model_kwargs={"temperature": 0.5, "max_length": 64}
